@@ -4,7 +4,7 @@ import { Router, Route } from 'react-router';
 import createHistory from 'history/createBrowserHistory'
 import configureStore from '../store'
 import Main from './Main';
-import Landing from './Landing';
+import Dashboard from './Dashboard';
 import '../styles/App.css';
 
 const store = configureStore();
@@ -16,7 +16,7 @@ class App extends Component {
             <Provider store={store} key="provider">
                 <Router history={history}>
                     <Main>
-                        <Route exact path="/" component={Landing}/>
+                        <Route exact path="/" component={Dashboard}/>
                     </Main>
                 </Router>
             </Provider>

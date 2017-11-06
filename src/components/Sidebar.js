@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import Sidebar from '../components/Sidebar';
 import '../styles/App.css';
 
-class Dashboard extends Component {
+class Sidebar extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -17,8 +16,8 @@ class Dashboard extends Component {
 
     render() {
 		return (
-            <div className="dashboard-container">
-                <Sidebar history={this.props.history}/>
+            <div className="sidebar-container">
+                
             </div>
 		);
 	}
@@ -28,4 +27,4 @@ const mapStateToProps = state => ({
 
 })
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps)(Sidebar);

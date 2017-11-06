@@ -7,6 +7,10 @@ import Main from './Main';
 import Dashboard from './Dashboard';
 import Projects from './Projects';
 import ProjectDetail from './ProjectDetail';
+import ProjectData from './ProjectData';
+import ProjectSegment from './ProjectSegment';
+import ProjectList from './ProjectList';
+import ProjectSettings from './ProjectSettings';
 import Logout from './Logout';
 import '../styles/App.css';
 
@@ -22,7 +26,11 @@ class App extends Component {
                         <Route exact path="/" component={Dashboard}/>
                         <Route exact path="/projects" component={Projects}/>
                         <Route exact path="/logout" component={Logout}/>
-                        <Route path="/projects/:id" component={ProjectDetail}/>
+                        <Route exact path="/projects/:id" component={ProjectDetail}/>
+                        <Route exact path="/projects/:id/data" component={ProjectData}/>
+                        <Route exact path="/projects/:id/segments" component={ProjectSegment}/>
+                        <Route exact path="/projects/:id/lists" component={ProjectList}/>
+                        <Route exact path="/projects/:id/settings" component={ProjectSettings}/>
                     </Main>
                 </Router>
             </Provider>

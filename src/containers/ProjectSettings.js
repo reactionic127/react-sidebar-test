@@ -4,7 +4,7 @@ import { Col, Breadcrumb } from 'react-bootstrap'
 import Sidebar from '../components/Sidebar';
 import '../styles/App.css';
 
-class ProjectDetail extends Component {
+class ProjectSettings extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -23,7 +23,7 @@ class ProjectDetail extends Component {
                 <Sidebar 
                     history={this.props.history} 
                     projectDetail={projectDetail}
-                    selected="overview"
+                    selected="settings"
                 />
                 <div className="project-container">
                     <Breadcrumb className="custom-breadcrumb">
@@ -68,4 +68,4 @@ const mapStateToProps = state => ({
 
 })
 
-export default connect(mapStateToProps)(ProjectDetail);
+export default connect(mapStateToProps)(ProjectSettings);

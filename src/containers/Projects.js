@@ -18,10 +18,10 @@ class Projects extends Component {
 
     }
 
-    goProject(id) {
+    goProject(project) {
         this.props.history.push({
-            pathname: `/projects/${id}`,
-            query: { id }
+            pathname: `/projects/${project.id}`,
+            state: project
 		});
     }
 
@@ -37,7 +37,7 @@ class Projects extends Component {
                             </span>
                         </div>
                         <div className="project-button">
-                            <Button className="visit-button" onClick={this.goProject.bind(this, project.id)}>
+                            <Button className="visit-button" onClick={this.goProject.bind(this, project)}>
                                 Visit
                             </Button>
                         </div>

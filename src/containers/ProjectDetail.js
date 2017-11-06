@@ -1,54 +1,26 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { Col, Breadcrumb, Button } from 'react-bootstrap'
+import { Col, Breadcrumb } from 'react-bootstrap'
 import Sidebar from '../components/Sidebar';
-import { makeData } from "../components/Utils";
 import '../styles/App.css';
 
 class ProjectDetail extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            projects: makeData(),
+
         };
-        this.goProject = this.goProject.bind(this);
 	}
 
 	componentWillMount() {
 
     }
 
-    goProject(id) {
-        console.log(id)
-    }
-
-    renderProject() {
-        let {projects} = this.state;
-        return(
-			projects.map((project, index) => {
-				return (
-					<div className="one-project-view" key={index}>
-                        <div className="project-header">
-                            <span className="header-title">
-                                {project.name}
-                            </span>
-                        </div>
-                        <div className="project-button">
-                            <Button className="visit-button" onClick={this.goProject.bind(this, project.id)}>
-                                Visit
-                            </Button>
-                        </div>
-                    </div>
-				);
-			})
-		);
-    }
-
     render() {
-        let currentProjectId = this.props.match.params.id
+        let projectDetail = this.props.location.state
 		return (
             <div className="dashboard-container">
-                <Sidebar history={this.props.history} selected="projects"/>
+                <Sidebar history={this.props.history} projectDetail={projectDetail}/>
                 <div className="project-container">
                     <Breadcrumb className="custom-breadcrumb">
                         <Col md={6} className="no-padding">
@@ -60,11 +32,11 @@ class ProjectDetail extends Component {
                                 </span>
                                 </div>
                             </Breadcrumb.Item>
-                            <Breadcrumb.Item href={`/projects/${currentProjectId}`} className="breadcrumb-item">
+                            <Breadcrumb.Item href={`/projects/${projectDetail.id}`} className="breadcrumb-item">
                                 <div>
                                 <i className="fa fa-home breadcrumb-text" aria-hidden="true"></i>
                                 <span className="breadcrumb-text margin-l-5">
-                                    {currentProjectId}
+                                    {projectDetail.id}
                                 </span>
                                 </div>
                             </Breadcrumb.Item>

@@ -12,6 +12,7 @@ class Sidebar extends Component {
         };
         this.goProject  = this.goProject.bind(this);
         this.goLogout  = this.goLogout.bind(this);
+        this.goOverView  = this.goOverView.bind(this);
 	}
 
 	componentWillMount() {
@@ -26,8 +27,12 @@ class Sidebar extends Component {
         this.props.history.push('/logout');
     }
 
+    goOverView() {
+
+    }
+
     render() {
-        let {selected} = this.props;
+        let {selected, projectDetail} = this.props;
 		return (
             <div className="sidebar-container">
                 <div className="app-logo">
@@ -46,6 +51,21 @@ class Sidebar extends Component {
                         <i className="fa fa-commenting fa-lg custom-icon margin-l-20" aria-hidden="true"></i>
                     </div>
                 </div>
+                {projectDetail !== undefined &&
+                    <div className="project-side-view">
+                        <span className="project-side-title">
+                            {projectDetail.name}
+                        </span>
+                        <div className="global-group">
+                            <div className="global-project" onClick={this.goOverView}>
+                                <i className="fa fa-tachometer custom-icon" aria-hidden="true"></i>
+                                <span className={selected === 'projects' ? "global-selected-text" : "global-text"}>
+                                    Overview
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                }
                 <div className="category-view">
                     <span className="global-text">
                         GLOBAL

@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { Col, Breadcrumb, Button } from 'react-bootstrap'
 import Sidebar from '../components/Sidebar';
+import { makeData } from "../components/Utils";
 import '../styles/App.css';
 
 class Projects extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            
+            projects: makeData(),
         };
 	}
 
@@ -17,20 +18,25 @@ class Projects extends Component {
     }
 
     renderProject() {
-        return (
-            <div className="one-project-view">
-                <div className="project-header">
-                    <span className="header-title">
-                        TestExample 2
-                    </span>
-                </div>
-                <div className="project-button">
-                    <Button className="visit-button">
-                        Visit
-                    </Button>
-                </div>
-            </div>
-        )
+        let {projects} = this.state;
+        return(
+			projects.map((project, index) => {
+				return (
+					<div className="one-project-view" key={index}>
+                        <div className="project-header">
+                            <span className="header-title">
+                                {project.name}
+                            </span>
+                        </div>
+                        <div className="project-button">
+                            <Button className="visit-button">
+                                Visit
+                            </Button>
+                        </div>
+                    </div>
+				);
+			})
+		);
     }
 
     render() {
@@ -61,7 +67,9 @@ class Projects extends Component {
                         <span className="myproject-title">
                             MY PROJECT(S)
                         </span>
-                        {this.renderProject()}
+                        <div>
+                            {this.renderProject()}
+                        </div>
                     </div>
                 </div>
             </div>

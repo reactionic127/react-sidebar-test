@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "namor": "^1.0.1",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.5",
     "react-breadcrumbs-dynamic": "^1.0.9",

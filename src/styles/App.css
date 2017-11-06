@@ -113,8 +113,10 @@
     width: 300px;
     height: 150px;
     background: #FFFFFF;
-    margin-top: 10px;
     border: 1px solid #D1D4D7;
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 20px; 
 }
 .project-header {
     height: 50px;
@@ -139,4 +141,8 @@
     background: #ffffff;
     border: 1px solid #CCCCCC;
     border-radius: 0px;
+}
+.project-group-view {
+    /* display: flex;
+    flex-direction: row; */
 }

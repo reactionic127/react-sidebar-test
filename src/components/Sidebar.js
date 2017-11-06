@@ -35,6 +35,25 @@ class Sidebar extends Component {
                         <i className="fa fa-commenting fa-lg custom-icon margin-l-20" aria-hidden="true"></i>
                     </div>
                 </div>
+                <div className="category-view">
+                    <span className="global-text">
+                        GLOBAL
+                    </span>
+                    <div className="global-group">
+                        <div className="global-project">
+                            <i className="fa fa-folder custom-icon" aria-hidden="true"></i>
+                            <span className="global-text">
+                                Projects
+                            </span>
+                        </div>
+                        <div className="global-project">
+                            <i className="fa fa-sign-out custom-icon" aria-hidden="true"></i>
+                            <span className="global-text">
+                                Logout
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
 		);
 	}

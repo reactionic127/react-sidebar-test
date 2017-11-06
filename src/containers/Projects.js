@@ -34,7 +34,9 @@ class Projects extends Component {
     addProject() {
         let {projectName} = this.state;
         if (projectName.length > 0) {
-                        
+            this.setState({
+                addModalVisible: false
+            })            
         }else {
             this.setState({
                 addModalVisible: false

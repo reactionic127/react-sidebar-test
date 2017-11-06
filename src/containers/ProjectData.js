@@ -10,10 +10,28 @@ class ProjectData extends Component {
 		this.state = {
 
         };
+        this.goParent = this.goParent.bind(this);
+        this.goData = this.goData.bind(this);
 	}
 
 	componentWillMount() {
 
+    }
+
+    goParent() {
+        let projectDetail = this.props.location.state;
+        this.props.history.push({
+            pathname: `/projects/${projectDetail.id}`,
+            state: projectDetail
+		});
+    }
+
+    goData() {
+        let projectDetail = this.props.location.state;
+        this.props.history.push({
+            pathname: `/projects/${projectDetail.id}/data`,
+            state: projectDetail
+		});
     }
 
     render() {
@@ -36,11 +54,19 @@ class ProjectData extends Component {
                                 </span>
                                 </div>
                             </Breadcrumb.Item>
-                            <Breadcrumb.Item href={`/projects/${projectDetail.id}`} className="breadcrumb-item">
+                            <Breadcrumb.Item className="breadcrumb-item" onClick={this.goParent}>
                                 <div>
                                 <i className="fa fa-home breadcrumb-text" aria-hidden="true"></i>
                                 <span className="breadcrumb-text margin-l-5">
                                     {projectDetail.id}
+                                </span>
+                                </div>
+                            </Breadcrumb.Item>
+                            <Breadcrumb.Item className="breadcrumb-item" onClick={this.goData}>
+                                <div>
+                                <i className="fa fa-folder-open breadcrumb-text" aria-hidden="true"></i>
+                                <span className="breadcrumb-text margin-l-5">
+                                    Data
                                 </span>
                                 </div>
                             </Breadcrumb.Item>

@@ -10,14 +10,32 @@ class ProjectSegment extends Component {
 		this.state = {
 
         };
+        this.goParent = this.goParent.bind(this);
+        this.goSegments = this.goSegments.bind(this);
 	}
 
 	componentWillMount() {
 
     }
 
+    goParent() {
+        let projectDetail = this.props.location.state;
+        this.props.history.push({
+            pathname: `/projects/${projectDetail.id}`,
+            state: projectDetail
+		});
+    }
+
+    goSegments() {
+        let projectDetail = this.props.location.state;
+        this.props.history.push({
+            pathname: `/projects/${projectDetail.id}/segments`,
+            state: projectDetail
+		});
+    }
+
     render() {
-        let projectDetail = this.props.location.state
+        let projectDetail = this.props.location.state;
 		return (
             <div className="dashboard-container">
                 <Sidebar 
@@ -36,11 +54,19 @@ class ProjectSegment extends Component {
                                 </span>
                                 </div>
                             </Breadcrumb.Item>
-                            <Breadcrumb.Item href={`/projects/${projectDetail.id}`} className="breadcrumb-item">
+                            <Breadcrumb.Item className="breadcrumb-item" onClick={this.goParent}>
                                 <div>
                                 <i className="fa fa-home breadcrumb-text" aria-hidden="true"></i>
                                 <span className="breadcrumb-text margin-l-5">
                                     {projectDetail.id}
+                                </span>
+                                </div>
+                            </Breadcrumb.Item>
+                            <Breadcrumb.Item className="breadcrumb-item" onClick={this.goSegments}>
+                                <div>
+                                <i className="fa fa-folder-open breadcrumb-text" aria-hidden="true"></i>
+                                <span className="breadcrumb-text margin-l-5">
+                                    Segments
                                 </span>
                                 </div>
                             </Breadcrumb.Item>

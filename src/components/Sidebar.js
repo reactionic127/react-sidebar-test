@@ -27,6 +27,7 @@ class Sidebar extends Component {
     }
 
     render() {
+        let {selected} = this.props;
 		return (
             <div className="sidebar-container">
                 <div className="app-logo">
@@ -51,14 +52,14 @@ class Sidebar extends Component {
                     </span>
                     <div className="global-group">
                         <div className="global-project" onClick={this.goProject}>
-                            <i className="fa fa-folder custom-icon" aria-hidden="true"></i>
-                            <span className="global-text">
+                            <i className={ selected === 'projects' ? "fa fa-folder custom-selected-icon" : "fa fa-folder custom-icon"} aria-hidden="true"></i>
+                            <span className={selected === 'projects' ? "global-selected-text" : "global-text"}>
                                 Projects
                             </span>
                         </div>
                         <div className="global-project" onClick={this.goLogout}>
-                            <i className="fa fa-sign-out custom-icon" aria-hidden="true"></i>
-                            <span className="global-text">
+                            <i className={selected === 'logout' ? "fa fa-sign-out custom-selected-icon" : "fa fa-sign-out custom-icon"} aria-hidden="true"></i>
+                            <span className={selected === 'logout' ? "global-selected-text" : "global-text"}>
                                 Logout
                             </span>
                         </div>

@@ -18,7 +18,7 @@ class Projects extends Component {
     render() {
 		return (
             <div className="dashboard-container">
-                <Sidebar history={this.props.history}/>
+                <Sidebar history={this.props.history} selected="projects"/>
             </div>
 		);
 	}

@@ -18,7 +18,7 @@ class Logout extends Component {
     render() {
 		return (
             <div className="dashboard-container">
-                <Sidebar history={this.props.history}/>
+                <Sidebar history={this.props.history} selected="logout"/>
             </div>
 		);
 	}

@@ -11,6 +11,12 @@
     align-items: center;
     background: #141519;
 }
+.margin-l-5 {
+    margin-left: 5px;
+}
+.margin-l-10 {
+    margin-left: 10px;
+}
 .margin-l-20 {
     margin-left: 20px;
 }
@@ -79,5 +85,16 @@
     flex-direction: row;
 }
 .project-container {
-    
+    width: calc(100% - 200px);
+    background: #E4E5E6;
+}
+.custom-breadcrumb {
+    height: 50px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+}
+.breadcrumb-text {
+    color: #3CB8DF;
+    margin-left: 5px;
 }

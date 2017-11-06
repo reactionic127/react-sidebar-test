@@ -5,6 +5,8 @@ import createHistory from 'history/createBrowserHistory'
 import configureStore from '../store'
 import Main from './Main';
 import Dashboard from './Dashboard';
+import Projects from './Projects';
+import Logout from './Logout';
 import '../styles/App.css';
 
 const store = configureStore();
@@ -17,6 +19,8 @@ class App extends Component {
                 <Router history={history}>
                     <Main>
                         <Route exact path="/" component={Dashboard}/>
+                        <Route exact path="/projects" component={Projects}/>
+                        <Route exact path="/logout" component={Logout}/>
                     </Main>
                 </Router>
             </Provider>

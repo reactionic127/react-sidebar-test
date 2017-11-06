@@ -10,10 +10,20 @@ class Sidebar extends Component {
 		this.state = {
             
         };
+        this.goProject  = this.goProject.bind(this);
+        this.goLogout  = this.goLogout.bind(this);
 	}
 
 	componentWillMount() {
 
+    }
+
+    goProject() {
+        this.props.history.push('/projects');
+    }
+
+    goLogout() {
+        this.props.history.push('/logout');
     }
 
     render() {
@@ -40,13 +50,13 @@ class Sidebar extends Component {
                         GLOBAL
                     </span>
                     <div className="global-group">
-                        <div className="global-project">
+                        <div className="global-project" onClick={this.goProject}>
                             <i className="fa fa-folder custom-icon" aria-hidden="true"></i>
                             <span className="global-text">
                                 Projects
                             </span>
                         </div>
-                        <div className="global-project">
+                        <div className="global-project" onClick={this.goLogout}>
                             <i className="fa fa-sign-out custom-icon" aria-hidden="true"></i>
                             <span className="global-text">
                                 Logout

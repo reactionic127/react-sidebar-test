@@ -1,5 +1,48 @@
 .sidebar-container {
-    width: 250px;
+    width: 200px;
     min-height: 100vh;
     background: #2A2D37;
+}
+.app-logo {
+    width: 200px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #141519;
+}
+.margin-l-20 {
+    margin-left: 20px;
+}
+.logo-text {
+    color: white;
+    font-size: 19px;
+}
+.user-info {
+    width: 200px;
+    height: 200px;
+    background: #21242C;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.user-email {
+    color: white;
+    font-size: 14px;
+    margin-top: 20px;
+}
+.userIcon {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+}
+.icon-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+.custom-icon {
+    color: #747D82;
 }

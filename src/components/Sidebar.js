@@ -17,7 +17,6 @@ class Sidebar extends Component {
         this.goSegment  = this.goSegment.bind(this);
         this.goLists  = this.goLists.bind(this);
         this.goSettings  = this.goSettings.bind(this);
-        
 	}
 
 	componentWillMount() {

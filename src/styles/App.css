@@ -142,7 +142,15 @@
     border: 1px solid #CCCCCC;
     border-radius: 0px;
 }
-.project-group-view {
-    /* display: flex;
-    flex-direction: row; */
+.breadcrumb-item {
+    display: inline-block;
+    margin-right: 5px;
+}
+li.breadcrumb-item+li.breadcrumb-item:before {
+    content: "/\A0";
+    /* padding: 0 5px; */
+    color: #ccc;
+}
+li.breadcrumb-item+li.breadcrumb-item a{
+    display: inline-block;
 }

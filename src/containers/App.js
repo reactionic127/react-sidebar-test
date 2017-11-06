@@ -6,6 +6,7 @@ import configureStore from '../store'
 import Main from './Main';
 import Dashboard from './Dashboard';
 import Projects from './Projects';
+import ProjectDetail from './ProjectDetail';
 import Logout from './Logout';
 import '../styles/App.css';
 
@@ -21,6 +22,7 @@ class App extends Component {
                         <Route exact path="/" component={Dashboard}/>
                         <Route exact path="/projects" component={Projects}/>
                         <Route exact path="/logout" component={Logout}/>
+                        <Route path="/projects/:id" component={ProjectDetail}/>
                     </Main>
                 </Router>
             </Provider>

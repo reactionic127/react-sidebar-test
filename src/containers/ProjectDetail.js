@@ -5,7 +5,7 @@ import Sidebar from '../components/Sidebar';
 import { makeData } from "../components/Utils";
 import '../styles/App.css';
 
-class Projects extends Component {
+class ProjectDetail extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -19,10 +19,7 @@ class Projects extends Component {
     }
 
     goProject(id) {
-        this.props.history.push({
-            pathname: `/projects/${id}`,
-            query: { id }
-		});
+        console.log(id)
     }
 
     renderProject() {
@@ -48,17 +45,28 @@ class Projects extends Component {
     }
 
     render() {
+        let currentProjectId = this.props.match.params.id
 		return (
             <div className="dashboard-container">
                 <Sidebar history={this.props.history} selected="projects"/>
                 <div className="project-container">
                     <Breadcrumb className="custom-breadcrumb">
                         <Col md={6} className="no-padding">
-                            <Breadcrumb.Item href="/projects">
+                            <Breadcrumb.Item href="/projects" className="breadcrumb-item">
+                                <div>
                                 <i className="fa fa-folder breadcrumb-text" aria-hidden="true"></i>
                                 <span className="breadcrumb-text margin-l-5">
                                     Projects
                                 </span>
+                                </div>
+                            </Breadcrumb.Item>
+                            <Breadcrumb.Item href={`/projects/${currentProjectId}`} className="breadcrumb-item">
+                                <div>
+                                <i className="fa fa-home breadcrumb-text" aria-hidden="true"></i>
+                                <span className="breadcrumb-text margin-l-5">
+                                    {currentProjectId}
+                                </span>
+                                </div>
                             </Breadcrumb.Item>
                         </Col>
                         <Col md={6} className="text-right">
@@ -75,9 +83,6 @@ class Projects extends Component {
                         <span className="myproject-title">
                             MY PROJECT(S)
                         </span>
-                        <div>
-                            {this.renderProject()}
-                        </div>
                     </div>
                 </div>
             </div>
@@ -89,4 +94,4 @@ const mapStateToProps = state => ({
 
 })
 
-export default connect(mapStateToProps)(Projects);
+export default connect(mapStateToProps)(ProjectDetail);

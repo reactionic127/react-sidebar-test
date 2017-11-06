@@ -168,3 +168,6 @@ li.breadcrumb-item+li.breadcrumb-item a{
     white-space: nowrap;
     display: block;
 }
+.cursor-pointer {
+    cursor: pointer;
+}

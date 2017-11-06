@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { Col, Breadcrumb, Button } from 'react-bootstrap'
+import { Col, Breadcrumb, Button, Modal, FormControl } from 'react-bootstrap'
 import Sidebar from '../components/Sidebar';
 import { makeData } from "../components/Utils";
 import '../styles/App.css';
@@ -10,8 +10,14 @@ class Projects extends Component {
 		super(props);
 		this.state = {
             projects: makeData(),
+            addModalVisible: false,
+            projectName: ''
         };
         this.goProject = this.goProject.bind(this);
+        this.openModal = this.openModal.bind(this);
+        this.addProject = this.addProject.bind(this);
+        this.modalClose = this.modalClose.bind(this);
+        this.onProjectNameChange = this.onProjectNameChange.bind(this);
 	}
 
 	componentWillMount() {
@@ -23,6 +29,31 @@ class Projects extends Component {
             pathname: `/projects/${project.id}`,
             state: project
 		});
+    }
+
+    addProject() {
+        let {projectName} = this.state;
+        if (projectName.length > 0) {
+                        
+        }else {
+            this.setState({
+                addModalVisible: false
+            })
+        }
+    }
+
+    openModal() {
+        this.setState({ addModalVisible: true });
+    }
+
+    modalClose() {
+        this.setState({ addModalVisible: false });
+    }
+
+    onProjectNameChange(e) {
+        this.setState({
+            projectName: e.target.value
+        })
     }
 
     renderProject() {
@@ -48,6 +79,7 @@ class Projects extends Component {
     }
 
     render() {
+        let {projects, addModalVisible, projectName} = this.state;
 		return (
             <div className="dashboard-container">
                 <Sidebar history={this.props.history} selected="projects"/>
@@ -63,10 +95,10 @@ class Projects extends Component {
                         </Col>
                         <Col md={6} className="text-right">
                             <span className="margin-l-5">
-                                1 projects
+                                {projects.length} projects
                             </span>
                             <i className="fa fa-plus margin-l-20" aria-hidden="true"></i>
-                            <span className="margin-l-5">
+                            <span className="margin-l-5 cursor-pointer" onClick={this.openModal}>
                                 Add Project
                             </span>
                         </Col>
@@ -80,6 +112,30 @@ class Projects extends Component {
                         </div>
                     </div>
                 </div>
+                <Modal show={addModalVisible} onHide={this.modalClose}>
+                    <Modal.Header>
+                        <Modal.Title>
+                            Project info
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <span>
+                            Project Name
+                        </span>
+                        <FormControl
+                            type="text"
+                            autoFocus
+                            placeholder="project name"
+                            value={projectName}
+                            onChange={this.onProjectNameChange}
+                        />
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={this.modalClose}>Close</Button>
+                        <Button bsStyle="primary">Add</Button>
+                    </Modal.Footer>
+
+                </Modal>
             </div>
 		);
 	}

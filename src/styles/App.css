@@ -11,6 +11,9 @@
     align-items: center;
     background: #141519;
 }
+.no-padding {
+    padding: 0px;
+}
 .margin-l-5 {
     margin-left: 5px;
 }
@@ -96,5 +99,44 @@
 }
 .breadcrumb-text {
     color: #3CB8DF;
-    margin-left: 5px;
+}
+.project-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.myproject-title {
+    color: #6A767E;
+    font-size: 20px;
+    font-weight: bold;
+}
+.one-project-view {
+    width: 300px;
+    height: 150px;
+    background: #FFFFFF;
+    margin-top: 10px;
+    border: 1px solid #D1D4D7;
+}
+.project-header {
+    height: 50px;
+    background: #F8F9FA;
+    border-bottom: 1px solid #D1D4D7;
+    display: flex;
+    align-items: center;
+}
+.header-title {
+    color: #38ABD9;
+    font-size: 17px;
+    margin-left: 10px;
+}
+.project-button {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.visit-button {
+    width: 80px;
+    background: #ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 0px;
 }

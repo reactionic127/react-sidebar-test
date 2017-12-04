@@ -26,6 +26,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "eslint-autofix": "eslint --fix \"src/**/*.js\"",
-    "lint": "eslint \"src/**/*.js\""
+    "lint": "eslint \"src/**/*.js\"",
+    "heroku-prebuild": "npm i -g pm2 && pm2 install pm2-logrotate",
+    "heroku-postbuild": "npm run build"
   }
 }

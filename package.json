@@ -2,6 +2,10 @@
   "name": "tempus",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=7.10.1",
+    "npm": "=5.3.0"
+  },
   "dependencies": {
     "eslint-config-airbnb": "^16.1.0",
     "font-awesome": "^4.7.0",

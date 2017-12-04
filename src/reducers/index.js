@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
-import inventory from './inventoryReducer'
+import inventory from './inventoryReducer';
+
 const reducer = combineReducers({
-    inventory
+  inventory
 });
 
 export default reducer;
